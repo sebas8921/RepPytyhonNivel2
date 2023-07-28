@@ -22,7 +22,8 @@ async def ImprimeUsuarioAsyncio(idUsuario):
 #funcion para ejecutar mediante syncio
 async def ImprimeListaAsyncio(ListaUsuarios):
         tareas = []
-        for contador in ListaUsuarios:
+        #aqui tuve un error de no hacer asincronica la tarea (este punto es una modificacion a la entrega original)
+        async for contador in ListaUsuarios:
             tarea = asyncio.ensure_future(ImprimeUsuarioAsyncio(contador))
             tareas.append(tarea)
         await asyncio.gather(*tareas, return_exceptions=True)
