@@ -2,7 +2,6 @@ import api
 import concurrent.futures
 import os
 from collections import Counter
-import tabulate
 
 #CARGA INICIAL DE DATOS
 
@@ -102,7 +101,7 @@ def listarTodosLosEpisodios():
             print('id:' +'  ' + str(episodio['id']) + '    ' + 'nombre:' + '   ' + str(episodio['name']) + '    ' + 'fecha de emisión:' + '   ' + str(episodio['air_date']))
     input('Presione ENTER para continuar...')   
 
-#metodo para contabilizar los personajes por status
+#metodo para obtener una agrupacion de los personajes por status
 def personajesPorStatus():
     listaStatus = []
     for personaje in todoslosPersonajes:
@@ -115,6 +114,7 @@ def personajesPorStatus():
          print(key,'    |',value)
     input('Presione ENTER para continuar...') 
 
+#metodo para obtener una agrupacion de ubicaciones por tipo
 def ubicacionesPorTipo():
     listaTipo = []
     for ubicacion in todaslasUbicaciones:
@@ -162,8 +162,3 @@ while opcionMenu != 7:
             salirDelPrograma()
         case _: 
             opcionInvalida()
-
-
-#pendientes
-#cantidad de ubicaciones por tipo
-#cantidad de episodios por año y mes

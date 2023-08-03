@@ -31,7 +31,7 @@ def getInfoEpisodios():
         print("ERROR: No fue posible datos en el metodo getInfoUbicaciones")
 
 # metodo para obtener los personajes de una pagina especifica
-# al ser un metodo pesado, utilizaremos asyncio para ejecutar la tarea de forma simultanea sobre las diferentes paginas
+# al ser un metodo pesado, utilizaremos threading para ejecutar la tarea de forma simultanea sobre las diferentes paginas
 def getPersonajesPagina(pagina):
     url = "https://rickandmortyapi.com/api/character/?page=" + str(pagina)
     getResponse = req.get(url)
