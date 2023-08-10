@@ -191,7 +191,7 @@ def personajesCreadosPorAño():
     plt.title("Personajes creados por año")
     plt.show()
 
-
+#metodo que imprime un grafico de pastel para mostrar los personajes por especie
 def PersonajesPorEspecie():
     df_PjsPorEspecie = df_Personajes.groupby(['species'])['Qty'].sum()
     plt.pie(df_PjsPorEspecie.values,labels=df_PjsPorEspecie.index, autopct='%1.1f%%')
